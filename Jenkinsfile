@@ -3,7 +3,7 @@ pipeline {
     stages {
         stage('Test') {
             steps {
-                bat 'python -m unittest discover -s . -p "test_*.py" -v'
+                sh 'python3 -m unittest discover -s . -p "test_*.py" -v'
             }
         }
     }
