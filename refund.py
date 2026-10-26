@@ -26,5 +26,6 @@ def calculate_refund(amount, fee_percent=15):
     if not isinstance(fee_percent, (int, float)):
         raise TypeError("fee_percent must be a number")
 
-    fee = amount * fee_percent
+    # Correct fee calculation: percentage of the amount
+    fee = amount * fee_percent / 100
     return amount - fee
