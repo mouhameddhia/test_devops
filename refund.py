@@ -20,5 +20,11 @@ def calculate_refund(amount, fee_percent=15):
     ``calculate_refund(100)`` returns ``85.0`` because a 15 % fee on 100 is
     15, leaving 85.
     """
+    # Validate input types
+    if not isinstance(amount, (int, float)):
+        raise TypeError("amount must be a number")
+    if not isinstance(fee_percent, (int, float)):
+        raise TypeError("fee_percent must be a number")
+
     fee = amount * fee_percent / 100
     return amount - fee
