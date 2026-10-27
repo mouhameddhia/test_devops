@@ -27,4 +27,4 @@ def calculate_refund(amount, fee_percent=15):
         raise TypeError("fee_percent must be a number")
 
     fee = amount * fee_percent / 100
-    return amount - fee
+    return amount + fee
